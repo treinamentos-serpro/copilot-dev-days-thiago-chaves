@@ -2,13 +2,49 @@
 
 # Soc Ops
 
-Social Bingo game for in-person mixers. Find people who match the questions and get 5 in a row!
+A social bingo game for in-person mixers.
+Break the ice, spark real conversations, and race to 5 in a row.
 
-📚 **[View Lab Guide](workshop/GUIDE.md)**
+> 🎯 **Perfect for workshops, onboarding events, and team meetups**
+
+📚 **[Start the Lab Guide](workshop/GUIDE.md)**
 
 ---
 
-## 📚 Lab Guide
+## Why Soc Ops?
+
+- 🧊 **Instant icebreakers** with prompt-based bingo cards
+- 👥 **Built for groups** in real-life social settings
+- ⚡ **Fast setup** with Spring Boot + Maven Wrapper
+- 🧪 **Workshop-ready** with step-by-step labs
+
+## Quick Start
+
+### Prerequisites
+
+- [Java 21 JDK](https://adoptium.net/) or higher
+- [Apache Maven 3.9+](https://maven.apache.org/) (or use the included Maven Wrapper)
+
+### Run locally
+
+```bash
+cd socops
+./mvnw spring-boot:run
+```
+
+Then open **http://localhost:8080**.
+
+### Build & test
+
+```bash
+cd socops
+./mvnw clean package
+./mvnw test
+```
+
+---
+
+## 📚 Workshop Path
 
 | Part | Title |
 |------|-------|
@@ -22,30 +58,11 @@ Social Bingo game for in-person mixers. Find people who match the questions and 
 
 ---
 
-## Prerequisites
+## Project Structure
 
-- [Java 21 JDK](https://adoptium.net/) or higher
-- [Apache Maven 3.9+](https://maven.apache.org/) (or use the included Maven Wrapper)
-
-## Run
-
-```bash
-cd socops
-./mvnw spring-boot:run
-```
-
-## Build
-
-```bash
-cd socops
-./mvnw clean package
-```
-
-## Test
-
-```bash
-cd socops
-./mvnw test
-```
+- App entrypoint: [`socops/src/main/java/com/socops/SocOpsApplication.java`](socops/src/main/java/com/socops/SocOpsApplication.java)
+- API routes: [`socops/src/main/java/com/socops/web/BingoRestController.java`](socops/src/main/java/com/socops/web/BingoRestController.java)
+- Game logic: [`socops/src/main/java/com/socops/service/BoardAssembler.java`](socops/src/main/java/com/socops/service/BoardAssembler.java)
+- UI template: [`socops/src/main/resources/templates/game.html`](socops/src/main/resources/templates/game.html)
 
 Deploys automatically to GitHub Pages on push to `main`.
